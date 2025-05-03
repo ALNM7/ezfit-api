@@ -57,7 +57,7 @@ class FoodAnalysisView(APIView):
 
         try:
             # Llamar a la API de LogMeal
-            api_user_token = 'ef4069ab80205e2e71fa5d8e3307c619f6a1e711'  # Token: es recomendable manejarlo en settings o en variables de entorno
+            api_user_token = 'bb8b41231713630a0ba87d1ab1a304e746f32c60'  # Token: es recomendable manejarlo en settings o en variables de entorno
             headers = {'Authorization': f'Bearer {api_user_token}'}
             
             # Primer llamado a la API para segmentación
