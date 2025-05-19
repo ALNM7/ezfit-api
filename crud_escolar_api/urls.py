@@ -19,6 +19,12 @@ from crud_escolar_api.views import bootstrap
 from crud_escolar_api.views import users
 from crud_escolar_api.views import auth
 from crud_escolar_api.views import food
+from .views.food import FoodAll, FoodView
+#Para la subida de fotos
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 
 urlpatterns = [
        #Version
@@ -30,5 +36,13 @@ urlpatterns = [
     #Logout
         path('logout/', auth.Logout.as_view()),
     #Comida 
-         path('food-analysis/', food.FoodAnalysisView.as_view()),
+        # path('food-analysis/', food.FoodAnalysisView.as_view()),
+    #Comida ahora si final 
+         path('food/all', FoodAll.as_view()),
+        path('food', FoodView.as_view()),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
